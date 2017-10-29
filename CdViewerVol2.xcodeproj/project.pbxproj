@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0FFC55B1FA6016D00B40536 /* CD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FFC55A1FA6016D00B40536 /* CD.swift */; };
 		AC7F889F1FA1B86000A80FAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7F889E1FA1B86000A80FAE /* AppDelegate.swift */; };
 		AC7F88A11FA1B86000A80FAE /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7F88A01FA1B86000A80FAE /* MasterViewController.swift */; };
 		AC7F88A31FA1B86000A80FAE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7F88A21FA1B86000A80FAE /* DetailViewController.swift */; };
@@ -15,7 +16,6 @@
 		AC7F88AB1FA1B86000A80FAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7F88A91FA1B86000A80FAE /* LaunchScreen.storyboard */; };
 		AC7F88B61FA1B86000A80FAE /* CdViewerVol2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7F88B51FA1B86000A80FAE /* CdViewerVol2Tests.swift */; };
 		AC7F88C11FA1B86000A80FAE /* CdViewerVol2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7F88C01FA1B86000A80FAE /* CdViewerVol2UITests.swift */; };
-		AC7F88CF1FA1B9CA00A80FAE /* CD.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7F88CE1FA1B9CA00A80FAE /* CD.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A0FFC55A1FA6016D00B40536 /* CD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CD.swift; sourceTree = "<group>"; };
 		AC7F889B1FA1B86000A80FAE /* CdViewerVol2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CdViewerVol2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7F889E1FA1B86000A80FAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC7F88A01FA1B86000A80FAE /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +51,6 @@
 		AC7F88BC1FA1B86000A80FAE /* CdViewerVol2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CdViewerVol2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7F88C01FA1B86000A80FAE /* CdViewerVol2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CdViewerVol2UITests.swift; sourceTree = "<group>"; };
 		AC7F88C21FA1B86000A80FAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC7F88CE1FA1B9CA00A80FAE /* CD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CD.swift; path = "../../../Downloads/CdViewer.iOS.swift-master/CdViewer/CD.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +104,11 @@
 				AC7F889E1FA1B86000A80FAE /* AppDelegate.swift */,
 				AC7F88A01FA1B86000A80FAE /* MasterViewController.swift */,
 				AC7F88A21FA1B86000A80FAE /* DetailViewController.swift */,
-				AC7F88CE1FA1B9CA00A80FAE /* CD.swift */,
 				AC7F88A41FA1B86000A80FAE /* Main.storyboard */,
 				AC7F88A71FA1B86000A80FAE /* Assets.xcassets */,
 				AC7F88A91FA1B86000A80FAE /* LaunchScreen.storyboard */,
 				AC7F88AC1FA1B86000A80FAE /* Info.plist */,
+				A0FFC55A1FA6016D00B40536 /* CD.swift */,
 			);
 			path = CdViewerVol2;
 			sourceTree = "<group>";
@@ -199,6 +199,7 @@
 				TargetAttributes = {
 					AC7F889A1FA1B85F00A80FAE = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = M8WRLZM8N4;
 						ProvisioningStyle = Automatic;
 					};
 					AC7F88B01FA1B86000A80FAE = {
@@ -267,7 +268,7 @@
 			files = (
 				AC7F88A31FA1B86000A80FAE /* DetailViewController.swift in Sources */,
 				AC7F88A11FA1B86000A80FAE /* MasterViewController.swift in Sources */,
-				AC7F88CF1FA1B9CA00A80FAE /* CD.swift in Sources */,
+				A0FFC55B1FA6016D00B40536 /* CD.swift in Sources */,
 				AC7F889F1FA1B86000A80FAE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +421,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M8WRLZM8N4;
 				INFOPLIST_FILE = CdViewerVol2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.dsiedlarz.CdViewerVol2;
@@ -432,6 +434,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M8WRLZM8N4;
 				INFOPLIST_FILE = CdViewerVol2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.dsiedlarz.CdViewerVol2;
@@ -513,6 +516,7 @@
 				AC7F88C71FA1B86000A80FAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC7F88C81FA1B86000A80FAE /* Build configuration list for PBXNativeTarget "CdViewerVol2Tests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +525,7 @@
 				AC7F88CA1FA1B86000A80FAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC7F88CB1FA1B86000A80FAE /* Build configuration list for PBXNativeTarget "CdViewerVol2UITests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +534,7 @@
 				AC7F88CD1FA1B86000A80FAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

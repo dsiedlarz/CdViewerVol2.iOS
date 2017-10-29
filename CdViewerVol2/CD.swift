@@ -1,9 +1,21 @@
-//
-//  CD.swift
-//  CdViewerVol2
-//
-//  Created by Dawid Siedlarz private on 29.10.2017.
-//  Copyright © 2017 Użytkownik Gość. All rights reserved.
-//
+import UIKit
 
-import Foundation
+class CD {
+    var artist:String = "";
+    var album:String = "";
+    var genre:String = "";
+    var year:String = "";
+    var tracks:String = "";
+    
+    init () {
+    }
+    
+    init(json: [String: Any]) {
+        self.artist = String(describing: json["artist"]!)
+        self.album = String(describing: json["album"]!)
+        self.genre = String(describing: json["genre"]!)
+        self.year = String(describing: json["year"]!)
+        self.tracks = String(describing: json["tracks"]!)
+    }
+}
+

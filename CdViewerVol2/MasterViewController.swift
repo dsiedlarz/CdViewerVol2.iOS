@@ -1,29 +1,19 @@
-//
-//  MasterViewController.swift
-//  CdViewerVol2
-//
-//  Created by Użytkownik Gość on 26.10.2017.
-//  Copyright © 2017 Użytkownik Gość. All rights reserved.
-//
-
 import UIKit
 
 class MasterViewController: UITableViewController {
-
-//    var cdCollection: [CD] = []
     var json: [Dictionary<String,Any>] = []
     var failCount = 0
-
+    
     
     var detailViewController: DetailViewController? = nil
     var objects = [CD]()
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem
-
+        
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
@@ -33,62 +23,72 @@ class MasterViewController: UITableViewController {
         
         self.fetchJson();
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
         super.viewWillAppear(animated)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func insertNewObject(_ sender: Any) {
-        objects.insert(CD(), at: 0)
+        let cd = CD();
+        cd.album = "New"
+        cd.artist = "New"
+        cd.year = "New"
+        
+        objects.insert(cd, at: 0)
+        
         let indexPath = IndexPath(row: 0, section: 0)
-        self.tableView.insertRows(at: [indexPath], with: .automatic)
+//        self.tableView.insertRows(at: [indexPath], with: .automatic)
+        
+        self.tableView.reloadData()
     }
-
+    
     // MARK: - Segues
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let object = objects[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = object
+                controller.currentIndex = indexPath.row
+                controller.masterViewController = self
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }
-
+    
     // MARK: - Table View
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return objects.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
+        
         let object = objects[indexPath.row]
         (cell.viewWithTag(201) as! UILabel).text = object.artist
         (cell.viewWithTag(202) as! UILabel).text = object.album
         (cell.viewWithTag(203) as! UILabel).text = object.year
         return cell
     }
-
+    
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             objects.remove(at: indexPath.row)
@@ -97,7 +97,7 @@ class MasterViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
-
+    
     
     func fetchJson(){
         let url = URL(string:"https://isebi.net/albums.php");
@@ -129,7 +129,5 @@ class MasterViewController: UITableViewController {
         }
         return collection
     }
-    
-
 }
 
